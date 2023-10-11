@@ -49,8 +49,17 @@ public class C
                 current /= 16;
             }
             
+            
             while (nums.Count > 0)
-                hexResult += nums.Pop();
+            {
+                int num = nums.Pop();
+
+                //Para numeros mas altos que 9 hay que poner la letra correspondiente
+                if (num > 9)
+                    hexResult += (char)( 'A' + num - 10);
+                else
+                    hexResult += num;
+            }
             
             //readability
             hexResult+=" ";
